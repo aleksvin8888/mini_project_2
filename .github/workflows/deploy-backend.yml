@@ -27,12 +27,12 @@ jobs:
             git pull origin main
             docker-compose down
           
-            cat > .env << EOL
+            cat > .env << EOF
             DB_NAME=${{ secrets.DB_NAME }}
             DB_USER=${{ secrets.DB_USER }}
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
             CORS_ALLOWED_ORIGINS=${{ secrets.CORS_ALLOWED_ORIGINS }}
-            EOL
+            EOF
           
             docker-compose up -d --build
           EOF
